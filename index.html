@@ -21,11 +21,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     </div>
 
     <nav class="navbar">
-        <a href="#">Overview</a>
-        <a href="#">Symptoms</a>
-        <a href="#">Timeline</a>
-        <a href="#">Prevention</a>
-        <a href="#">Report</a>
+        <a href="#Overview">Overview</a>
+        <a href="#Symptoms">Symptoms</a>
+        <a href="#Timeline">Timeline</a>
+        <a href="#Prevention">Prevention</a>
+        <a href="#Report">Report</a>
     </nav>
 </header>
 
@@ -68,7 +68,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 </section>
 <!-- OUTBREAK SUMMARY SECTION -->
-<section class="summary-section">
+<section class="summary-section"  id="Overview">
 
     <div class="section-title">
         <h1>Outbreak Summary</h1>
@@ -239,7 +239,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </section>
 
 <!-- SYMPTOMS SECTION -->
-<section class="symptoms-section">
+<section class="symptoms-section" id="Symptoms">
 
     <!-- TITLE -->
     <div class="symptoms-title">
@@ -314,7 +314,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </section>
 
 <!-- TIMELINE SECTION -->
-<section class="timeline-section">
+<section class="timeline-section" id="Timeline">
 
     <!-- TITLE -->
     <div class="timeline-title">
@@ -414,7 +414,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </section>
 
 <!-- SAFETY SECTION -->
-<section class="safety-section">
+<section class="safety-section" id="Prevention">
 
     <!-- TITLE -->
     <div class="safety-title">
@@ -661,7 +661,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </section>
 
 <!-- REPORT SECTION -->
-<section class="report-section">
+<section class="report-section" id="Report">
 
     <!-- BLACK HEADER -->
     <div class="report-header">
@@ -821,5 +821,72 @@ value="https://drewlab610.github.io/HantavirusAwarenessCenter/thanks.html">
 
 </footer>
 
+
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+
+    });
+},{
+    threshold:0.15
+});
+
+const hiddenElements = document.querySelectorAll(
+`
+.section-title,
+.virus-title,
+.symptoms-title,
+.timeline-title,
+.safety-title,
+.response-title,
+.travel-title,
+.report-header,
+.stat-card,
+.virus-card,
+.symptom-card,
+.timeline-item,
+.safety-card,
+.response-card,
+.travel-card,
+.country-card,
+.report-form-box,
+.footer-top,
+.footer-bottom
+`
+);
+
+hiddenElements.forEach((el)=>{
+
+    el.classList.add('hidden');
+    observer.observe(el);
+
+});
+
+/* LEFT ANIMATION */
+
+document.querySelectorAll('.timeline-item.left').forEach((el)=>{
+    el.classList.add('fade-left');
+});
+
+/* RIGHT ANIMATION */
+
+document.querySelectorAll('.timeline-item.right').forEach((el)=>{
+    el.classList.add('fade-right');
+});
+
+/* ZOOM CARDS */
+
+document.querySelectorAll(
+'.stat-card,.symptom-card,.travel-card'
+).forEach((el)=>{
+    el.classList.add('zoom-in');
+});
+
+</script>
 </body>
 </html>

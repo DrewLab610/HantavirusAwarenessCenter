@@ -15,6 +15,70 @@ body{
     color:white;
 }
 
+
+/* ================= SCROLL ANIMATIONS ================= */
+
+.hidden{
+    opacity:0;
+    transform:translateY(60px);
+    transition:all 1s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* DIFFERENT ANIMATION DIRECTIONS */
+
+.fade-left{
+    opacity:0;
+    transform:translateX(-80px);
+    transition:all 1s ease;
+}
+
+.fade-left.show{
+    opacity:1;
+    transform:translateX(0);
+}
+
+.fade-right{
+    opacity:0;
+    transform:translateX(80px);
+    transition:all 1s ease;
+}
+
+.fade-right.show{
+    opacity:1;
+    transform:translateX(0);
+}
+
+.zoom-in{
+    opacity:0;
+    transform:scale(.8);
+    transition:all 1s ease;
+}
+
+.zoom-in.show{
+    opacity:1;
+    transform:scale(1);
+}
+
+/* STAGGER EFFECT */
+
+.stat-card,
+.virus-card,
+.symptom-card,
+.safety-card,
+.travel-card,
+.response-card,
+.country-card{
+    transition:
+    transform .4s ease,
+    box-shadow .4s ease,
+    opacity 1s ease;
+}
+
 /* ================= GLOBAL TITLES ================= */
 
 .section-title h1,

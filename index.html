@@ -675,73 +675,70 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     </div>
 
     <!-- FORM BOX -->
-    <div class="report-form-box">
+   <div class="report-form-box">
 
-        <form>
+<form action="https://formsubmit.co/publichealthsupportteam@gmail.com" method="POST">
 
-           <div class="input-grid">
+    <div class="input-grid">
 
-    <!-- INPUT -->
-    <div class="input-box">
-        <label>Full Name</label>
-        <input type="text" placeholder="John Doe">
+        <div class="input-box">
+            <label>Full Name</label>
+            <input type="text" name="name" placeholder="John Doe" required>
+        </div>
+
+        <div class="input-box">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="john@example.com" required>
+        </div>
+
+        <div class="input-box">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="+44 7123 456789">
+        </div>
+
+        <div class="input-box">
+            <label>Country</label>
+            <input type="text" name="country" placeholder="United Kingdom">
+        </div>
+
+        <div class="input-box full-width">
+            <label>Home Address</label>
+            <input type="text" name="address" placeholder="221B Baker Street, London">
+        </div>
+
+        <div class="input-box full-width">
+            <label>Recent Travel History</label>
+            <input type="text" name="travel" placeholder="Cruise from Buenos Aires">
+        </div>
+
     </div>
 
-    <!-- INPUT -->
-    <div class="input-box">
-        <label>Email</label>
-        <input type="email" placeholder="john@example.com">
-    </div>
-
-    <!-- INPUT -->
-    <div class="input-box">
-        <label>Phone Number</label>
-        <input type="tel" placeholder="+44 7123 456789">
-    </div>
-
-    <!-- INPUT -->
-    <div class="input-box">
-        <label>Country</label>
-        <input type="text" placeholder="United Kingdom">
-    </div>
-
-    <!-- INPUT -->
     <div class="input-box full-width">
-        <label>Home Address</label>
-        <input type="text" placeholder="221B Baker Street, London">
+        <label>Symptoms</label>
+        <input type="text" name="symptoms"
+        placeholder="Fever, headache, difficulty breathing...">
     </div>
 
-    <!-- INPUT -->
     <div class="input-box full-width">
-        <label>Recent Travel History</label>
-        <input type="text" placeholder="Cruise from Buenos Aires">
+        <label>Message</label>
+        <textarea name="message"
+        placeholder="Any additional details..."></textarea>
     </div>
+
+    <!-- Prevent captcha -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Success page -->
+   <input type="hidden" name="_next"
+value="https://drewlab610.github.io/HantavirusAwarenessCenter/thanks.html">
+
+<button type="submit" class="report-btn">
+        Submit
+    </button>
+
+</form>
 
 </div>
-
-            <!-- SYMPTOMS -->
-            <div class="input-box full-width">
-                <label>Symptoms</label>
-                <input type="text"
-                placeholder="Fever, headache, difficulty breathing...">
-            </div>
-
-            <!-- MESSAGE -->
-            <div class="input-box full-width">
-                <label>Message</label>
-                <textarea
-                placeholder="Any additional details..."></textarea>
-            </div>
-
-            <!-- BUTTON -->
-            <button type="submit" class="report-btn">
-                <i class="fa-regular fa-paper-plane"></i>
-                Submit
-            </button>
-
-        </form>
-
-    </div>
 
 </section>
 

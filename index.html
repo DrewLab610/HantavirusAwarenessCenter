@@ -824,67 +824,70 @@ value="https://drewlab610.github.io/HantavirusAwarenessCenter/thanks.html">
 
 <script>
 
-const observer = new IntersectionObserver((entries)=>{
-    entries.forEach((entry)=>{
+window.addEventListener("DOMContentLoaded", () => {
 
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
+    const observer = new IntersectionObserver((entries)=>{
+        
+        entries.forEach((entry)=>{
+
+            if(entry.isIntersecting){
+                entry.target.classList.add("show");
+            }
+
+        });
+
+    },{
+        threshold:0.15
+    });
+
+    const hiddenElements = document.querySelectorAll(`
+        .section-title,
+        .virus-title,
+        .symptoms-title,
+        .timeline-title,
+        .safety-title,
+        .response-title,
+        .travel-title,
+        .report-header,
+        .stat-card,
+        .virus-card,
+        .symptom-card,
+        .timeline-item,
+        .safety-card,
+        .response-card,
+        .travel-card,
+        .country-card,
+        .report-form-box,
+        .footer-top,
+        .footer-bottom
+    `);
+
+    hiddenElements.forEach((el)=>{
+
+        el.classList.add("hidden");
+        observer.observe(el);
 
     });
-},{
-    threshold:0.15
-});
 
-const hiddenElements = document.querySelectorAll(
-`
-.section-title,
-.virus-title,
-.symptoms-title,
-.timeline-title,
-.safety-title,
-.response-title,
-.travel-title,
-.report-header,
-.stat-card,
-.virus-card,
-.symptom-card,
-.timeline-item,
-.safety-card,
-.response-card,
-.travel-card,
-.country-card,
-.report-form-box,
-.footer-top,
-.footer-bottom
-`
-);
+    /* LEFT */
+    document.querySelectorAll(".timeline-item.left").forEach((el)=>{
+        el.classList.add("fade-left");
+    });
 
-hiddenElements.forEach((el)=>{
+    /* RIGHT */
+    document.querySelectorAll(".timeline-item.right").forEach((el)=>{
+        el.classList.add("fade-right");
+    });
 
-    el.classList.add('hidden');
-    observer.observe(el);
+    /* ZOOM */
+    document.querySelectorAll(`
+        .stat-card,
+        .symptom-card,
+        .travel-card
+    `).forEach((el)=>{
+        el.classList.add("zoom-in");
+    });
 
-});
-
-/* LEFT ANIMATION */
-
-document.querySelectorAll('.timeline-item.left').forEach((el)=>{
-    el.classList.add('fade-left');
-});
-
-/* RIGHT ANIMATION */
-
-document.querySelectorAll('.timeline-item.right').forEach((el)=>{
-    el.classList.add('fade-right');
-});
-
-/* ZOOM CARDS */
-
-document.querySelectorAll(
-'.stat-card,.symptom-card,.travel-card'
-).forEach((el)=>{
-    el.classList.add('zoom-in');
 });
 
 </script>
